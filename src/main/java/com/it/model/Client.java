@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+
 @Entity
 @Table
 public class Client {
@@ -18,8 +19,8 @@ public class Client {
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "client_has_section",
-            joinColumns = {@JoinColumn(name = "section_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "client_id", referencedColumnName = "id")})
+            joinColumns = {@JoinColumn(name = "client_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "section_id", referencedColumnName = "id")})
     private Set<Section> section = new HashSet<>();
 
     private Boolean haveclubcard;
