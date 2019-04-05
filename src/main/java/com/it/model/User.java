@@ -29,10 +29,7 @@ public class User {
 
   private String email;
 
-  public User(Integer id, Set<Client> clients, Set<Trainer> trainers, Roles roles, String name, String login, String password, String email) {
-    this.id = id;
-    this.clients = clients;
-    this.trainers = trainers;
+  public User(Roles roles, String name, String login, String password, String email) {
     this.roles = roles;
     this.name = name;
     this.login = login;

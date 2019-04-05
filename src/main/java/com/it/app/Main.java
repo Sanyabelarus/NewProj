@@ -28,7 +28,7 @@ public class Main {
         new AnnotationConfigApplicationContext(AppConfiguration.class);
     Main main = annotatedClassApplicationContext.getBean("main", Main.class);
     createRoles(main, "Trainer");
-    createRoles(main, "Client");
+    createRoles(main, "ClientService");
     Optional<Roles> roles1 = main.getRolesRepository().findById(1);
     Optional<Roles> roles2 = main.getRolesRepository().findById(2);
     createUser(main, roles1.get());
@@ -46,9 +46,8 @@ public class Main {
     Optional<Section> section = main.getSectionRepository().findById(1);
     createClient(main, user2.get());
     Optional<Client> client = main.getClientRepository().findById(1);
-    System.out.println(client.get().getSection());
-    main.getClientRepository().save(client.get());
-    System.out.println(client.get().getSection());
+    client.get().getSection().add(section.get());
+    System.out.println(client.get().getSection().toString());
   }
 
   public UserRepository getUserRepository() {
