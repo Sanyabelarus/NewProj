@@ -46,9 +46,8 @@ public class Main {
     Optional<Section> section = main.getSectionRepository().findById(1);
     createClient(main, user2.get());
     Optional<Client> client = main.getClientRepository().findById(1);
-    System.out.println(client.get().getSection());
+    System.out.println(client.get().getSection().size());
     main.getClientRepository().save(client.get());
-    System.out.println(client.get().getSection());
   }
 
   public UserRepository getUserRepository() {
