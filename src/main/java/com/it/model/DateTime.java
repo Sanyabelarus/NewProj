@@ -3,52 +3,51 @@ package com.it.model;
 import javax.persistence.*;
 import java.util.Set;
 
+/** Class for the entity DateTime. It's dateTime table in database */
 @Entity
 @Table
 public class DateTime {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "gym_id", nullable = false)
-    private Gym gym;
+  @ManyToOne
+  @JoinColumn(name = "gym_id", nullable = false)
+  private Gym gym;
 
-    @OneToMany(mappedBy = "dateTime")
-    private Set<Day> days;
+  @OneToMany(mappedBy = "dateTime")
+  private Set<Day> days;
 
-    public DateTime(Integer id, Gym gym, Set<Day> days) {
-        this.id = id;
-        this.gym = gym;
-        this.days = days;
-    }
+  public DateTime(Integer id, Gym gym, Set<Day> days) {
+    this.id = id;
+    this.gym = gym;
+    this.days = days;
+  }
 
-    public DateTime() {
-    }
+  public DateTime() {}
 
-    public Integer getId() {
-        return id;
-    }
+  public Integer getId() {
+    return id;
+  }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
-    public Gym getGym() {
-        return gym;
-    }
+  public Gym getGym() {
+    return gym;
+  }
 
-    public void setGym(Gym gym) {
-        this.gym = gym;
-    }
+  public void setGym(Gym gym) {
+    this.gym = gym;
+  }
 
-    public Set<Day> getDays() {
-        return days;
-    }
+  public Set<Day> getDays() {
+    return days;
+  }
 
-    public void setDays(Set<Day> days) {
-        this.days = days;
-    }
-
+  public void setDays(Set<Day> days) {
+    this.days = days;
+  }
 }

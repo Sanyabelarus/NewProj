@@ -3,6 +3,7 @@ package com.it.model;
 import javax.persistence.*;
 import java.util.Set;
 
+/** Class for the entity Roles. It's roles table in database */
 @Entity
 @Table
 public class Roles {
@@ -22,8 +23,7 @@ public class Roles {
     this.roleName = roleName;
   }
 
-  public Roles() {
-  }
+  public Roles() {}
 
   public Integer getId() {
     return id;
@@ -33,20 +33,19 @@ public class Roles {
     this.id = id;
   }
 
-    public String getRoleName() {
-        return roleName;
-    }
+  public String getRoleName() {
+    return roleName;
+  }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
+  public void setRoleName(String roleName) {
+    this.roleName = roleName;
+  }
 
-    public Set<User> getUser() {
-        return user;
-    }
+  public Set<User> getUser() {
+    return user;
+  }
 
-    public void setUser(Set<User> user) {
-        this.user = user;
-    }
-
+  public void setUser(Set<User> user) {
+    this.user = user;
+  }
 }

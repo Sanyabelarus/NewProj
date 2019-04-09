@@ -2,40 +2,39 @@ package com.it.model;
 
 import javax.persistence.*;
 
+/** Class for the entity Time . It's time table in database */
 @Entity
 @Table
 public class Time {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "day_id", nullable = false)
-    private Day day;
+  @ManyToOne
+  @JoinColumn(name = "day_id", nullable = false)
+  private Day day;
 
-    public Time(Integer id, Day day) {
-        this.id = id;
-        this.day = day;
-    }
+  public Time(Integer id, Day day) {
+    this.id = id;
+    this.day = day;
+  }
 
-    public Time() {
-    }
+  public Time() {}
 
-    public Integer getId() {
-        return id;
-    }
+  public Integer getId() {
+    return id;
+  }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
-    public Day getDay() {
-        return day;
-    }
+  public Day getDay() {
+    return day;
+  }
 
-    public void setDay(Day day) {
-        this.day = day;
-    }
-
+  public void setDay(Day day) {
+    this.day = day;
+  }
 }

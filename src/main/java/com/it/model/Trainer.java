@@ -3,6 +3,7 @@ package com.it.model;
 import javax.persistence.*;
 import java.util.Set;
 
+/** Class for the entity Trainer. It's trainer table in database */
 @Entity
 @Table
 public class Trainer {

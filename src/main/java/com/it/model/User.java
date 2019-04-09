@@ -2,7 +2,9 @@ package com.it.model;
 
 import javax.persistence.*;
 import java.util.Set;
-
+/**
+ * Class for the entity User. It's user table in database
+ */
 @Entity
 @Table
 public class User {

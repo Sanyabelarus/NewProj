@@ -3,6 +3,7 @@ package com.it.model;
 import javax.persistence.*;
 import java.util.Set;
 
+/** Class for the entity TrainingTypes. It's trainingTypes table in database */
 @Entity
 @Table
 public class TrainingTypes {
@@ -22,8 +23,7 @@ public class TrainingTypes {
     this.trainingName = trainingName;
   }
 
-  public TrainingTypes() {
-  }
+  public TrainingTypes() {}
 
   public Integer getId() {
     return id;
@@ -33,13 +33,13 @@ public class TrainingTypes {
     this.id = id;
   }
 
-    public String getTrainingName() {
-        return trainingName;
-    }
+  public String getTrainingName() {
+    return trainingName;
+  }
 
-    public void setTrainingName(String trainingName) {
-        this.trainingName = trainingName;
-    }
+  public void setTrainingName(String trainingName) {
+    this.trainingName = trainingName;
+  }
 
   public Set<Trainer> getTrainers() {
     return trainers;
@@ -48,6 +48,4 @@ public class TrainingTypes {
   public void setTrainers(Set<Trainer> trainers) {
     this.trainers = trainers;
   }
-
-
 }
