@@ -2,6 +2,7 @@ package com.it.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -20,6 +21,7 @@ import java.util.Properties;
 
 @Configuration
 @PropertySource("classpath:database.properties")
+@ComponentScan("com.it")
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {
         "com.it.repository"

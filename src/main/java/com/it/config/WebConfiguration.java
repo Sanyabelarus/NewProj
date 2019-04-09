@@ -10,6 +10,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
+@ComponentScan(basePackages = "com.it")
 public class WebConfiguration {
     @Bean
     public ViewResolver viewResolver() {
