@@ -1,12 +1,12 @@
 package com.it.services;
 
-import com.it.model.TrainingTypes;
+import com.it.model.TrainingType;
 
 import java.util.List;
 
-public interface TrainingTypesService {
-    TrainingTypes addUser(TrainingTypes user);
+public interface TrainingTypeService {
+    TrainingType addUser(TrainingType user);
     void delete(Integer num);
-    TrainingTypes getByName(String name);
-    List<TrainingTypes> getAll();
+    TrainingType getByName(String name);
+    List<TrainingType> getAll();
 }

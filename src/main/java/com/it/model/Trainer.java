@@ -3,6 +3,9 @@ package com.it.model;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * Class for the entity Trainer. It's trainer table in database
+ */
 @Entity
 @Table
 public class Trainer {
@@ -16,16 +19,16 @@ public class Trainer {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "trainingTypes_id", nullable = false)
-    private TrainingTypes trainingTypes;
+    @JoinColumn(name = "trainingType_id", nullable = false)
+    private TrainingType trainingType;
 
     @OneToMany(mappedBy = "trainer")
     private Set<Section> sections;
 
-    public Trainer(Integer id, User user, TrainingTypes trainingTypes, Set<Section> sections) {
+    public Trainer(Integer id, User user, TrainingType trainingType, Set<Section> sections) {
         this.id = id;
         this.user = user;
-        this.trainingTypes = trainingTypes;
+        this.trainingType = trainingType;
         this.sections = sections;
     }
 
@@ -48,12 +51,12 @@ public class Trainer {
         this.user = user;
     }
 
-    public TrainingTypes getTrainingTypes() {
-        return trainingTypes;
+    public TrainingType getTrainingType() {
+        return trainingType;
     }
 
-    public void setTrainingTypes(TrainingTypes trainingTypes) {
-        this.trainingTypes = trainingTypes;
+    public void setTrainingType(TrainingType trainingType) {
+        this.trainingType = trainingType;
     }
 
     public Set<Section> getSections() {

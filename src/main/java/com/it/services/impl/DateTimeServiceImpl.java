@@ -4,12 +4,16 @@ import com.it.model.DateTime;
 import com.it.repository.DateTimeRepository;
 import com.it.services.DateTimeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class DateTimeServiceImpl implements DateTimeService {
 
-    @Autowired private DateTimeRepository dateTimeRepository;
+    @Autowired
+    private DateTimeRepository dateTimeRepository;
+
     @Override
     public DateTime addUser(DateTime user) {
         DateTime dateTime = dateTimeRepository.save(user);

@@ -3,6 +3,9 @@ package com.it.model;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * Class for the entity DateTime. It's dateTime table in database
+ */
 @Entity
 @Table
 public class DateTime {

@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface DayService {
     Day addUser(Day user);
+
     void delete(Integer num);
+
     List<Day> getAll();
 }

@@ -3,6 +3,9 @@ package com.it.model;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * Class for the entity Day. It's day table in database
+ */
 @Entity
 @Table
 public class Day {

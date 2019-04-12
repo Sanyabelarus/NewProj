@@ -21,7 +21,7 @@ import java.util.Properties;
 
 @Configuration
 @PropertySource("classpath:database.properties")
-@ComponentScan("com.it")
+@ComponentScan(basePackages = "com.it")
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {
         "com.it.repository"
@@ -34,11 +34,26 @@ public class DataBaseConfiguration {
     @Value("${connection.url}")
     private String url;
 
+    @Value("${dialect}")
+    private String dialect;
+
+    @Value("${connection.username}")
+    private String username;
+
+    @Value("${connection.password}")
+    private String password;
+
 
     public DataSource dataSource() {
         EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
         return builder.setType(EmbeddedDatabaseType.H2).build();
     }
+
+    /**
+     * Create entityManager which will work with repositories in the ApplicationContext
+     *
+     * @return EntityManagerFactory
+     */
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
@@ -50,6 +65,12 @@ public class DataBaseConfiguration {
         return localContainerEntityManagerFactoryBean;
     }
 
+    /**
+     * Create transactionManager which will work with repositories in the ApplicationContext
+     *
+     * @param emf entityManagerFactory.
+     * @return transactionManager
+     */
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
         JpaTransactionManager transactionManager = new JpaTransactionManager();

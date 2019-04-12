@@ -4,7 +4,9 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-
+/**
+ * Class for the entity Client. It's client table in database
+ */
 @Entity
 @Table
 public class Client {

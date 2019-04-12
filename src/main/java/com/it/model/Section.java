@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Class for the entity Section. It's section table in database
+ */
 @Entity
 @Table
 public class Section {

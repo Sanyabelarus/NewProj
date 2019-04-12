@@ -8,9 +8,11 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+/**
+ * Configuration class for MVC module of project
+ */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.it")
 public class WebConfiguration {
     @Bean
     public ViewResolver viewResolver() {

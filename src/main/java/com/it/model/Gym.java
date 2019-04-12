@@ -3,6 +3,9 @@ package com.it.model;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * Class for the entity Gym. It's gym table in database
+ */
 @Entity
 @Table
 public class Gym {

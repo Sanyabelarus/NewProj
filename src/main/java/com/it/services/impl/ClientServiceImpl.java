@@ -2,9 +2,11 @@ package com.it.services.impl;
 
 import com.it.model.Client;
 import com.it.services.ClientService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ClientServiceImpl implements ClientService {
 
     @Override

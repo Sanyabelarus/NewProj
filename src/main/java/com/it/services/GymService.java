@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface GymService {
     Gym addUser(Gym user);
+
     void delete(Integer num);
+
     List<Gym> getAll();
 }

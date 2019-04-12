@@ -1,9 +1,10 @@
 package com.it.repository;
 
-import com.it.model.Client;
-import com.it.model.TrainingTypes;
+import com.it.model.TrainingType;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-
-public interface TrainingTypesRepository extends JpaRepository<TrainingTypes, Integer> {
+/**
+ * Repository layer for TrainingTypes
+ */
+public interface TrainingTypeRepository extends JpaRepository<TrainingType, Integer> {
 }

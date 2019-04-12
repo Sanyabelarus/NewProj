@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface DateTimeService {
     DateTime addUser(DateTime user);
+
     void delete(Integer Id);
+
     List<DateTime> getAll();
 }

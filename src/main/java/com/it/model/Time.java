@@ -2,6 +2,9 @@ package com.it.model;
 
 import javax.persistence.*;
 
+/**
+ * Class for the entity Time . It's time table in database
+ */
 @Entity
 @Table
 public class Time {

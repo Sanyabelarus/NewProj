@@ -15,18 +15,9 @@
 </div>
 <div>
     <p>modelAttribute:</p>
-    <form method="GET" action="/adduser">
-        <input type="text" name="Name">
-        <input type="text" name="Password">
-        <input type="text" name="Email">
-        <input type="submit" value="add">
-    </form>
 </div>
 <div>
     <p>viewName:</p>
-    <form method="GET" action="/viewName">
-        <input type="text" name="value"> <input type="submit" value="add">
-    </form>
 </div>
 </body>
 </html>
