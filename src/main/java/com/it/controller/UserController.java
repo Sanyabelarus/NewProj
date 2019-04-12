@@ -1,8 +1,9 @@
 package com.it.controller;
 
 import com.it.model.User;
-import com.it.services.impl.UserServiceImpl;
+import com.it.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 public class UserController {
-    @Autowired UserServiceImpl userService;
+    @Autowired
+    UserService userService;
+    @Autowired
+    MessageSource messageSource;
 
-    public UserServiceImpl getUserService() {
+    public UserService getUserService() {
         return userService;
     }
 
@@ -27,12 +28,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/addPoint", method = RequestMethod.GET)
-    public String addPoint(@ModelAttribute("name") String name, ModelMap model) {
-        User point1 = getUserService().addUser();
-        List<String> point = new ArrayList<>();
-        point.add(point1.getId().toString());
-        point.add(point1.getName());
-        model.addAttribute("point",point);
+    public String addUser(@ModelAttribute("name") String name, ModelMap model) {
+        User point1 = getUserService().addUser(new User());
+        messageSource.getMessage("app.started",Object[],)
         return "successPoint";
     }
 }
