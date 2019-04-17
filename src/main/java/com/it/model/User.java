@@ -20,8 +20,8 @@ public class User {
     private Set<Trainer> trainers;
 
     @ManyToOne
-    @JoinColumn(name = "roles_id", nullable = false)
-    private Roles roles;
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role role;
 
 
     private String name;
@@ -32,8 +32,8 @@ public class User {
 
     private String email;
 
-    public User(Roles roles, String name, String login, String password, String email) {
-        this.roles = roles;
+    public User(Role role, String name, String login, String password, String email) {
+        this.role = role;
         this.name = name;
         this.login = login;
         this.password = password;
@@ -91,12 +91,12 @@ public class User {
         this.email = email;
     }
 
-    public Roles getRoles() {
-        return roles;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRoles(Roles roles) {
-        this.roles = roles;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public Set<Trainer> getTrainers() {

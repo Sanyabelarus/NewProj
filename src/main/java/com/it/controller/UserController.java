@@ -1,6 +1,7 @@
 package com.it.controller;
 
 import com.it.model.User;
+import com.it.services.RoleServise;
 import com.it.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -13,14 +14,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UserController {
-    @Autowired
+
+
     UserService userService;
+
     @Autowired
     MessageSource messageSource;
 
     public UserService getUserService() {
         return userService;
     }
+
 
     @RequestMapping(value = "/modelAndView", method = RequestMethod.GET)
     public ModelAndView modelAndView() {
@@ -30,7 +34,7 @@ public class UserController {
     @RequestMapping(value = "/addPoint", method = RequestMethod.GET)
     public String addUser(@ModelAttribute("name") String name, ModelMap model) {
         User point1 = getUserService().addUser(new User());
-        messageSource.getMessage("app.started",Object[],)
+//        messageSource.getMessage("app.started", Object[],)
         return "successPoint";
     }
 }

@@ -4,28 +4,28 @@ import javax.persistence.*;
 import java.util.Set;
 
 /**
- * Class for the entity Roles. It's roles table in database
+ * Class for the entity Role. It's roles table in database
  */
 @Entity
 @Table
-public class Roles {
+public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "roles")
+    @OneToMany(mappedBy = "role")
     private Set<User> user;
 
     private String roleName;
 
-    public Roles(Integer id, Set<User> user, String roleName) {
+    public Role(Integer id, Set<User> user, String roleName) {
         this.id = id;
         this.user = user;
         this.roleName = roleName;
     }
 
-    public Roles() {
+    public Role() {
     }
 
     public Integer getId() {
